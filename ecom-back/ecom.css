@@ -10,7 +10,6 @@ header {
     color: #ececec;
     padding: 10px;
     text-align: center;
-    
 }
 
 .navbar {
@@ -41,17 +40,17 @@ header {
 }
 
 .container {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
 }
-
 .product {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
-    width: 30%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -96,4 +95,14 @@ button:hover {
 #total {
     font-weight: bold;
     margin-top: 10px;
+}
+.popup {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000;
 }

@@ -17,12 +17,46 @@
         <h1>Your Cart</h1>
     </header>
 
-    <div id="cart">
+    <div id="cart" class="cart-container">
         <h2>Your Items</h2>
-        <ul id="cart-items"></ul>
-        <p id="total">Total: $0.00</p>
+        <ul id="cart-items" class="cart-items"></ul>
+        <p id="total" class="total">Total: Rs:0.00</p>
+        <button id="checkout-btn">Proceed to Checkout</button>
     </div>
 
     <script src="ecom.js"></script>
+    <script>
+        // Function to load cart items on the cart page
+        function loadCartItems() {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsList = document.getElementById('cart-items');
+            let total = 0;
+
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'cart-item';
+
+                const img = document.createElement('img');
+                img.src = item.image;
+                img.alt = item.name;
+                img.width = 50;
+                img.height = 50;
+
+                const itemName = document.createElement('span');
+                itemName.innerText = `${item.name} - Rs:${item.price}`;
+
+                li.appendChild(img);
+                li.appendChild(itemName);
+                cartItemsList.appendChild(li);
+
+                total += item.price;
+            });
+
+            document.getElementById('total').innerText = `Total: Rs:${total.toFixed(2)}`;
+        }
+
+        // Load cart items when the page loads
+        window.onload = loadCartItems;
+    </script>
 </body>
 </html>
