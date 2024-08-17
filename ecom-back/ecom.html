@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoeStoree</title>
+    <link rel="stylesheet" href="ecom.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="ecom.html">Home</a></li>
+                <li><a  href="cartpage.html">Cart</a></li>
+            </ul>
+        </nav>
+        <h1>Shoe Store</h1>
+    </header>
+
+    <div class="container">
+        <div class="product" id="product1">
+            <img src="download1.png" alt="Shoe 1">
+            <h3>Peshawri Chapal</h3>
+            <p>RS:3000</p>
+            <button onclick="addToCart('Peshawri Chapal', 3000)">Add to Cart</button>
+        </div>
+        <div class="product" id="product2">
+            <img src="downlload2.png" alt="Shoe 2">
+            <h3>Men Formal</h3>
+            <p>RS:7000</p>
+            <button onclick="addToCart('Men Formal', 7000)">Add to Cart</button>
+        </div>
+        <div class="product" id="product3">
+            <img src="download3.png" alt="Shoe 3">
+            <h3>Men Casual</h3>
+            <p>RS:2500</p>
+            <button onclick="addToCart('Men Casual', 2500)">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src="ecom.js"></script>
+</body>
+</html>
